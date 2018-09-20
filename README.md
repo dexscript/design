@@ -1,2 +1,3 @@
-# yinguo-design
-design the language "yinguo"
+# devlang
+
+The language enables best code readability for developer
