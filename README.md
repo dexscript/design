@@ -1,3 +1,3 @@
-# devlang
+# shiti
 
-The language enables best code readability for developer
+shiti is a description tool which describe the cyberspace as relationship between entities
