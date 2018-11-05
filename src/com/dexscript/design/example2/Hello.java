@@ -1,9 +1,11 @@
 package com.dexscript.design.example2;
 
 /*
+import System.out.println
+
 def Hello() {
-    System.out.println('hello')
-    System.out.println(World())
+    println('hello')
+    println(World())
 }
 def World() {
     return 'world'

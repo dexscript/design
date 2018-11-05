@@ -1,33 +1,20 @@
 package com.dexscript.design.example3;
 
-import com.dexscript.design.core.Scheduler;
 import com.dexscript.design.core.Actor;
+import com.dexscript.design.core.Scheduler;
 
-//public class World extends Actor {
-//
-//    protected World(Scheduler scheduler, Actor caller) {
-//        super("world", scheduler, caller);
-//        next = this::dispatch;
-//    }
-//
-//    private void dispatch() {
-//        next = this::last;
-//        Request req = serve();
-//        switch (req.methodName) {
-//            case "say":
-//                say(req.caller);
-//                break;
-//            default:
-//                req.caller.reply(this,"unknown method");
-//        }
-//    }
-//
-//    private void say(Actor caller) {
-//        System.out.println("world");
-//        caller.reply(this,"say");
-//    }
-//
-//    private void last() {
-//        finish(null);
-//    }
-//}
+public class World extends Actor {
+
+    private String msg;
+
+    protected World(Scheduler scheduler, String msg) {
+        super("world", scheduler);
+        this.msg = msg;
+        yield();
+    }
+
+    @Override
+    protected void resume() {
+        finish(msg);
+    }
+}

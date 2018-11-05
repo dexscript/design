@@ -12,7 +12,7 @@ public class Scheduler {
             List<Actor> todoActors = this.readyActors;
             readyActors = new ArrayList<>();
             for (Actor todoActor : todoActors) {
-                todoActor.resume();
+                todoActor.tryResume();
             }
         }
     }

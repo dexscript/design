@@ -36,11 +36,22 @@ public abstract class Actor {
         return id;
     }
 
+    protected void yield() {
+        scheduler.wakeUp(this, this);
+    }
+
+    public void tryResume() {
+        if (result != null) {
+            return;
+        }
+        resume();
+    }
+
     protected void resume() {
 
     }
 
-    protected final void finish(Object ...result) {
+    protected final void finish(Object... result) {
         this.result = result;
         if (resultWaiters == null) {
             return;
@@ -66,6 +77,9 @@ public abstract class Actor {
     }
 
     protected List<Actor> fetchResponses() {
+        if (this.responses == null) {
+            return new ArrayList<>();
+        }
         List<Actor> fetched = this.responses;
         this.responses = null;
         return fetched;
