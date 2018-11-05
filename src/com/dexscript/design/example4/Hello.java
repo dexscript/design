@@ -10,9 +10,9 @@ def Hello() {
 }
 def World() {
     await {
-    -> say(msg: String): String {
-        return msg
-    }
+    -> say(): String {
+        return 'world'
+    }}
 }
 */
 
@@ -20,6 +20,7 @@ import com.dexscript.design.core.Actor;
 import com.dexscript.design.core.Scheduler;
 
 public class Hello extends Actor {
+
     public Hello(Scheduler scheduler) {
         super("hello", scheduler);
         System.out.println("hello");
