@@ -19,10 +19,6 @@ public final class Hello extends Actor {
         finish();
     }
 
-    @Override
-    protected void resume() {
-    }
-
     public static void main(String[] args) {
         Scheduler scheduler = new Scheduler();
         Hello hello = new Hello(scheduler);

@@ -36,7 +36,9 @@ public abstract class Actor {
         return id;
     }
 
-    protected abstract void resume();
+    protected void resume() {
+
+    }
 
     protected final void finish(Object ...result) {
         this.result = result;
@@ -52,15 +54,21 @@ public abstract class Actor {
         }
     }
 
-    protected final void await(Actor waiter) {
+    public final void await(Actor waiter) {
         if (resultWaiters == null) {
             resultWaiters = new ArrayList<>();
         }
         resultWaiters.add(waiter);
     }
 
-    protected final Object[] result() {
+    public final Object[] result() {
         return result;
+    }
+
+    protected List<Actor> fetchResponses() {
+        List<Actor> fetched = this.responses;
+        this.responses = null;
+        return fetched;
     }
 
     public String toString() {
