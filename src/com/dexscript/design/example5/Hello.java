@@ -12,7 +12,7 @@ def World() {
     await {
     -> say(task Task{String}) {
         yield()
-        task.resolve('world')
+        task.reply('world')
     }}
 }
 */

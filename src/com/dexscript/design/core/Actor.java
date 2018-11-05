@@ -40,7 +40,7 @@ public abstract class Actor {
         scheduler.wakeUp(this, this);
     }
 
-    public void tryResume() {
+    public final void tryResume() {
         if (result != null) {
             return;
         }

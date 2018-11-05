@@ -17,6 +17,6 @@ public class World extends Actor {
     }
 
     public void resume() {
-        sayTask.resolve("world");
+        sayTask.reply("world");
     }
 }
